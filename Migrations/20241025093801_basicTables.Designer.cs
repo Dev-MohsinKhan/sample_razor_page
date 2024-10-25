@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SampleRazorPage;
 
@@ -10,9 +11,10 @@ using SampleRazorPage;
 namespace SampleRazorPage.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241025093801_basicTables")]
+    partial class basicTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,7 +42,7 @@ namespace SampleRazorPage.Migrations
 
                     b.HasIndex("WiliyatId");
 
-                    b.ToTable("Areas", (string)null);
+                    b.ToTable("Areas");
                 });
 
             modelBuilder.Entity("SampleRazorPage.Models.PocoModel+EntityType", b =>
@@ -57,7 +59,7 @@ namespace SampleRazorPage.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("EntityType", (string)null);
+                    b.ToTable("EntityType");
                 });
 
             modelBuilder.Entity("SampleRazorPage.Models.PocoModel+Item", b =>
@@ -125,7 +127,7 @@ namespace SampleRazorPage.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Item", (string)null);
+                    b.ToTable("Item");
                 });
 
             modelBuilder.Entity("SampleRazorPage.Models.PocoModel+Region", b =>
@@ -142,7 +144,7 @@ namespace SampleRazorPage.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Regions", (string)null);
+                    b.ToTable("Regions");
                 });
 
             modelBuilder.Entity("SampleRazorPage.Models.PocoModel+Village", b =>
@@ -164,7 +166,7 @@ namespace SampleRazorPage.Migrations
 
                     b.HasIndex("AreaId");
 
-                    b.ToTable("Villages", (string)null);
+                    b.ToTable("Villages");
                 });
 
             modelBuilder.Entity("SampleRazorPage.Models.PocoModel+Wiliyat", b =>
@@ -186,7 +188,7 @@ namespace SampleRazorPage.Migrations
 
                     b.HasIndex("RegionId");
 
-                    b.ToTable("Wiliyats", (string)null);
+                    b.ToTable("Wiliyats");
                 });
 
             modelBuilder.Entity("SampleRazorPage.Pages.User", b =>
@@ -208,7 +210,7 @@ namespace SampleRazorPage.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("SampleRazorPage.Models.PocoModel+Area", b =>

@@ -30,8 +30,8 @@ namespace SampleRazorPage.Pages
             }
 
             // Save the valid user data to the database
-            _context.Users.Add(User);
-            await _context.SaveChangesAsync();
+           // _context.Users.Add(User);
+           // await _context.SaveChangesAsync();
 
             // Redirect to another page or display success message
             return RedirectToPage("Index");
@@ -42,11 +42,13 @@ namespace SampleRazorPage.Pages
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Name is required")]
+        //[Required(ErrorMessage = "Name is required")]
         [StringLength(50, ErrorMessage = "Name cannot be longer than 50 characters")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Gender is required")]
         public string Gender { get; set; }
     }
+
+
 }
